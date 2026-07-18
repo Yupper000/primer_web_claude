@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuando Dios se da cuenta de que es Dios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1f2a2e;
+      --muted: #4d5f66;
+      --soft: #6b7f87;
+      --paper: #f7fbfc;
+      --paper-2: #eef7f4;
+      --band: #dff3ec;
+      --accent: #1f9d8a;
+      --accent-deep: #0f6f63;
+      --sun: #f3b45c;
+      --line: rgba(31, 42, 46, 0.10);
+      --card: rgba(255, 255, 255, 0.72);
+      --shadow: 0 18px 40px rgba(31, 90, 84, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 12mm 12mm 14mm 12mm;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, #fff7e8 0%, transparent 55%),
+        radial-gradient(900px 600px at 100% 0%, #e8f8f3 0%, transparent 50%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      font-family: "Nunito", "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      padding: 0;
+    }
+
+    .sheet {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2px 8px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 26px 28px 22px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.88), rgba(223,243,236,0.92)),
+        radial-gradient(circle at 90% 20%, rgba(243,180,92,0.28), transparent 35%);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -50px auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(31,157,138,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent-deep);
+      background: rgba(31, 157, 138, 0.10);
+      border: 1px solid rgba(31, 157, 138, 0.16);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px;
+      max-width: 15ch;
+    }
+
+    .lead {
+      font-size: 15.5px;
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 0 0 12px;
+    }
+
+    .amen-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .amen {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 13px;
+      color: var(--accent-deep);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 21px;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 16px;
+      margin: 0 0 6px;
+      color: var(--accent-deep);
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      box-shadow: 0 8px 18px rgba(31, 90, 84, 0.05);
+      break-inside: avoid;
+    }
+
+    .panel.wide {
+      grid-column: 1 / -1;
+    }
+
+    .panel p:last-child,
+    .panel ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .panel strong {
+      color: var(--accent-deep);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+
+    li {
+      margin-bottom: 6px;
+      font-size: 13.5px;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    .search-box {
+      margin-top: 10px;
+      background: linear-gradient(180deg, #ffffff, #f3fbf8);
+      border: 1px dashed rgba(31, 157, 138, 0.35);
+      border-radius: 16px;
+      padding: 14px 16px;
+      break-inside: avoid;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .verdict {
+      margin-top: 16px;
+      border-radius: 18px;
+      padding: 16px 18px;
+      background:
+        linear-gradient(135deg, rgba(31,157,138,0.12), rgba(243,180,92,0.16)),
+        #fff;
+      border: 1px solid rgba(31, 157, 138, 0.18);
+      box-shadow: var(--shadow);
+      break-inside: avoid;
+    }
+
+    .verdict p {
+      font-size: 14.5px;
+      margin: 0;
+    }
+
+    .footer {
+      margin-top: 16px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--soft);
+      font-size: 11px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .closing {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    @media print {
+      .sheet {
+        padding: 0;
+        zoom: 0.92;
+      }
+      .hero, .panel, .verdict, .search-box {
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="hero">
+      <div class="eyebrow">Filosofía · Teología · Mística</div>
+      <h1>Cuando Dios se da cuenta de que es Dios</h1>
+      <p class="lead">
+        Sí: esa pregunta ya la han hecho. A veces con rigor académico,
+        a veces con poesía, a veces con humor luminoso. Aquí va un mapa claro
+        de quiénes hablan de eso y cómo lo formulan.
+      </p>
+      <div class="amen-row">
+        <span class="amen">Amén</span>
+        <span class="amen">Amén</span>
+        <span class="amen">Amén</span>
+        <span class="amen">Amén</span>
+        <span class="amen">Amén</span>
+        <span class="amen">Amén</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>La pregunta de fondo</h2>
+      <p>
+        La forma más común no es exactamente “¿en qué momento Dios se da cuenta?”,
+        sino estas versiones cercanas:
+      </p>
+      <div class="split">
+        <div class="panel">
+          <p><strong>Autoconocimiento divino</strong></p>
+          <p>¿Cómo se conoce Dios a sí mismo? ¿Sabe que es Dios?</p>
+        </div>
+        <div class="panel">
+          <p><strong>Despertar del Absoluto</strong></p>
+          <p>¿Cómo llega lo Absoluto a reconocerse, expresarse o “despertar”?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Dos caminos grandes</h2>
+      <div class="split">
+        <div class="panel">
+          <h3>1. Teísmo clásico</h3>
+          <p>
+            Dios <strong>no descubre</strong> que es Dios en un instante del tiempo.
+            Ya es, eternamente, perfecto autoconocimiento.
+          </p>
+          <p class="note">Aquí la pregunta es más “cómo” que “cuándo”.</p>
+        </div>
+        <div class="panel">
+          <h3>2. Tradiciones del despertar</h3>
+          <p>
+            Lo divino se oculta, se fragmenta, se dramatiza o se despliega…
+            y luego <strong>vuelve a reconocerse</strong>.
+          </p>
+          <p class="note">Aquí sí aparece algo parecido a un “darse cuenta”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Filósofos y teólogos clave</h2>
+      <div class="split">
+        <div class="panel">
+          <ul>
+            <li><strong>Aristóteles</strong> — Dios como “pensamiento que se piensa a sí mismo” (<em>nóesis noéseos</em>).</li>
+            <li><strong>Tomás de Aquino</strong> — “Si Dios se entiende a sí mismo” (<em>Suma Teológica</em> I, q.14): Dios se conoce por sí mismo.</li>
+            <li><strong>Plotino</strong> — cómo se relacionan el Uno y el Intelecto con la autoconciencia.</li>
+            <li><strong>Spinoza</strong> — Dios o la Naturaleza como sustancia infinita que se conoce.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <ul>
+            <li><strong>Hegel</strong> — el Espíritu Absoluto llega al autoconocimiento a través de la historia y la conciencia.</li>
+            <li><strong>Schelling</strong> — lo absoluto como proceso de hacerse consciente.</li>
+            <li><strong>Whitehead / Hartshorne</strong> — teología del proceso: Dios dinámico, no bloque estático.</li>
+            <li><strong>Meister Eckhart</strong> — Dios / Deidad y el nacimiento de Dios en el alma.</li>
+          </ul>
+        </div>
+        <div class="panel wide">
+          <ul>
+            <li><strong>Advaita Vedanta</strong> — Brahman “despertando” como Atman; la fórmula clásica: “Tú eres Eso”.</li>
+            <li><strong>Ibn Arabi / sufismo</strong> — Dios se conoce a través de su manifestación en la creación.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Autores y creadores más cercanos a tu wording</h2>
+      <p>
+        Si quieres la pregunta casi tal cual la formulaste —“cuando Dios se da cuenta de que es Dios”—
+        estos nombres suenan especialmente cerca:
+      </p>
+      <div class="split">
+        <div class="panel">
+          <p><strong>Alan Watts</strong></p>
+          <p>
+            Dios / el universo jugando al escondite consigo mismo:
+            se olvida y luego recuerda lo que es.
+            Empieza por <em>The Book: On the Taboo Against Knowing Who You Are</em>.
+          </p>
+        </div>
+        <div class="panel">
+          <p><strong>Maestros no duales</strong></p>
+          <p>
+            Rupert Spira y presentadores de Vedanta/Advaita:
+            la conciencia reconociéndose a sí misma.
+          </p>
+        </div>
+        <div class="panel wide">
+          <p><strong>Versiones contemporáneas</strong></p>
+          <p>
+            Bernardo Kastrup (idealismo analítico: la conciencia conociéndose)
+            y Ken Wilber (el Espíritu despertando a sí mismo).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="closing">
+      <section class="section">
+        <h2>Frases buenas para buscar</h2>
+        <div class="search-box">
+          <p class="note">Mejor que buscar solo “cuándo Dios se da cuenta de que es Dios”:</p>
+          <div class="chip-list">
+            <span class="chip">autoconocimiento divino</span>
+            <span class="chip">Dios se conoce a sí mismo Aquino</span>
+            <span class="chip">pensamiento que se piensa a sí mismo</span>
+            <span class="chip">Espíritu Absoluto autoconciencia Hegel</span>
+            <span class="chip">Dios jugando al escondite Alan Watts</span>
+            <span class="chip">realización Brahman Atman</span>
+            <span class="chip">Spirit waking up to itself</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="verdict">
+        <h2>Respuesta corta</h2>
+        <p>
+          Sí: filósofos, teólogos, místicos y creadores modernos tratan este tema.
+          Si quieres la respuesta clásica y estricta, empieza por Aquino y Aristóteles.
+          Si quieres la versión dramática —Dios se olvida y luego recuerda— empieza por
+          Alan Watts, Advaita y Hegel.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <span>Estilo visual: yupi claro light</span>
+        <span>Documento orientativo · lectura amable</span>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
