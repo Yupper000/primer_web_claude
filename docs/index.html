@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>YOS · Motor PAZ · Quick-Look</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1714;
+      --paper: #f7f3ec;
+      --sand: #e8dfd0;
+      --sun: #d4a24c;
+      --moss: #3d5a45;
+      --mute: #6b6358;
+      --line: rgba(26, 23, 20, 0.12);
+      --ok: #2f6b4f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(120% 80% at 10% -10%, #ffe8b8 0%, transparent 45%),
+        radial-gradient(90% 60% at 100% 0%, #d9e5d6 0%, transparent 40%),
+        var(--paper);
+      line-height: 1.45;
+    }
+    a { color: var(--moss); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 1rem 1rem 4rem; }
+    header {
+      padding: 1.25rem 0 1rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+      font-weight: 600;
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 8vw, 2.75rem);
+      margin: 0.35rem 0 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    h1 em { font-style: italic; color: var(--moss); }
+    .lede { color: var(--mute); margin: 0; font-size: 0.98rem; }
+    section { margin: 1.75rem 0; }
+    h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: 1.55rem;
+      margin: 0 0 0.6rem;
+    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0; }
+    .chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.28rem 0.55rem;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      border-radius: 999px;
+    }
+    .layer {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin: 0.55rem 0;
+    }
+    .layer strong { display: block; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.25rem; }
+    .layer p { margin: 0; font-size: 0.92rem; }
+    .nav-sets {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.45rem;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 0.55rem 0;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(8px);
+    }
+    .nav-sets a {
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.55rem 0.3rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+    .nav-sets a:hover { border-color: var(--sun); }
+    .set {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem 0 1.5rem;
+      box-shadow: 0 10px 30px rgba(26, 23, 20, 0.05);
+    }
+    .set-head { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; margin-bottom: 0.35rem; }
+    .set-id {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--sun);
+    }
+    .set h3 { margin: 0; font-size: 1.15rem; }
+    .set .why { color: var(--mute); font-size: 0.88rem; margin: 0.35rem 0 0.85rem; }
+    .shots { display: grid; gap: 0.65rem; }
+    figure { margin: 0; }
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      background: var(--sand);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    figcaption {
+      font-size: 0.72rem;
+      color: var(--mute);
+      margin-top: 0.3rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .copy-box {
+      margin-top: 0.85rem;
+      padding: 0.75rem 0.85rem;
+      border-left: 3px solid var(--sun);
+      background: var(--paper);
+      border-radius: 0 10px 10px 0;
+    }
+    .copy-box .hl { font-family: "Instrument Serif", Georgia, serif; font-size: 1.25rem; margin: 0 0 0.2rem; }
+    .copy-box .sp { margin: 0; color: var(--mute); font-size: 0.9rem; }
+    details {
+      margin-top: 0.7rem;
+      border-top: 1px solid var(--line);
+      padding-top: 0.55rem;
+    }
+    summary {
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--moss);
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    .prompt {
+      margin: 0.45rem 0 0;
+      font-size: 0.75rem;
+      color: var(--mute);
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      line-height: 1.4;
+    }
+    .decide {
+      position: sticky;
+      bottom: 0;
+      margin: 1.5rem -1rem -1rem;
+      padding: 0.85rem 1rem 1.1rem;
+      background: linear-gradient(to top, var(--paper) 70%, transparent);
+    }
+    .decide-inner {
+      background: var(--ink);
+      color: #f7f3ec;
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+    }
+    .decide-inner p { margin: 0 0 0.55rem; font-size: 0.85rem; opacity: 0.85; }
+    .btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+    .btns button {
+      border: 0;
+      border-radius: 10px;
+      padding: 0.65rem 0.3rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      font-family: inherit;
+      background: var(--sun);
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .btns button.picked { outline: 2px solid #fff; background: var(--ok); color: #fff; }
+    .note { font-size: 0.75rem; margin-top: 0.55rem; min-height: 1.1em; }
+    footer { margin-top: 2rem; font-size: 0.75rem; color: var(--mute); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">YOS · Taller · Quick-Look</div>
+      <h1>Motor <em>PAZ</em></h1>
+      <p class="lede">3 conjuntos contrincantes × 3 tomas. Misma emoción, igualdad de condiciones. Elige el que mejor transmite paz — o mezcla para la siguiente versión del entorno creativo.</p>
+      <div class="chip-row">
+        <span class="chip">VIBE · entorno</span>
+        <span class="chip">Diagonal BCN · 8am</span>
+        <span class="chip">Plano medio</span>
+        <span class="chip">vs prisas</span>
+      </div>
+    </header>
+
+    <section id="capas">
+      <h2>Por capas</h2>
+      <div class="layer">
+        <strong>1 · Hipótesis</strong>
+        <p>Ojos cerrados un instante + rayos entre árboles + acera concurrida = paz por contraste con estrés urbano.</p>
+      </div>
+      <div class="layer">
+        <strong>2 · Por qué evoca PAZ</strong>
+        <p>El cuerpo en quietud (ojos cerrados) frente a un fondo que se mueve. La luz “protege” al avatar. El espectador lee alivio, no drama.</p>
+      </div>
+      <div class="layer">
+        <strong>3 · Referencia semántica</strong>
+        <p>Patrones visuales frecuentes en contenido de mindfulness / morning commute / “slow living” urbano: sol filtrado, shallow DOF, sujeto quieto, multitud desenfocada.</p>
+      </div>
+      <div class="layer">
+        <strong>4 · Métrica</strong>
+        <p>Concepción: más identificación → más interacciones. Confirmación: interacciones + conversiones en funnel.</p>
+      </div>
+      <div class="layer">
+        <strong>5 · Motores hermanos</strong>
+        <p><b>PAZ</b> ≠ <b>LIBERACIÓN</b>. Cada uno con su grupo. El mix PAZ×LIBERACIÓN es un motor tercero cuando exista baseline de ambos.</p>
+      </div>
+    </section>
+
+    <nav class="nav-sets" aria-label="Conjuntos">
+      <a href="#set-a">A · Hombre</a>
+      <a href="#set-b">B · Mujer</a>
+      <a href="#set-c">C · Commute</a>
+    </nav>
+
+    <article class="set" id="set-a">
+      <div class="set-head">
+        <div>
+          <div class="set-id">CONJUNTO A</div>
+          <h3>Instante cerrado — Hombre</h3>
+        </div>
+      </div>
+      <p class="why">Paz como pausa interior en medio del flujo. Avatar masculino latino ~35, casual urbano.</p>
+      <div class="shots">
+        <figure>
+          <img src="assets/paz-a1-frontal.jpg" alt="PAZ A — toma frontal" loading="lazy" />
+          <figcaption>Toma 1 · Frontal</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-a2-trescuartos.jpg" alt="PAZ A — tres cuartos" loading="lazy" />
+          <figcaption>Toma 2 · Tres cuartos</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-a3-perfil.jpg" alt="PAZ A — perfil" loading="lazy" />
+          <figcaption>Toma 3 · Perfil + rayos</figcaption>
+        </figure>
+      </div>
+      <div class="copy-box">
+        <p class="hl">Un segundo. El tuyo.</p>
+        <p class="sp">En medio del ruido, el cuerpo ya sabe parar.</p>
+      </div>
+      <details>
+        <summary>Prompt maestro (EN)</summary>
+        <p class="prompt">Photorealistic ad still, 16:9. Medium shot waist-up, Latino man mid-30s centered on crowded Avinguda Diagonal Barcelona sidewalk, 8am summer. Eyes gently closed — one instant of peace/release. Golden sun rays through tree leaves cover his body organically. Busy blurred pedestrians behind = haste vs his calm. Fresh warm air. Natural cinematic, shallow DOF. No text, logos, overlays. Angle: [FRONTAL | THREE-QUARTER | PROFILE slightly low].</p>
+      </details>
+    </article>
+
+    <article class="set" id="set-b">
+      <div class="set-head">
+        <div>
+          <div class="set-id">CONJUNTO B</div>
+          <h3>Respiro urbano — Mujer</h3>
+        </div>
+      </div>
+      <p class="why">Misma estructura emocional; lectura femenina del instante. Prueba si el nicho se identifica más con este avatar.</p>
+      <div class="shots">
+        <figure>
+          <img src="assets/paz-b1-frontal.jpg" alt="PAZ B — toma frontal" loading="lazy" />
+          <figcaption>Toma 1 · Frontal</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-b2-trescuartos.jpg" alt="PAZ B — tres cuartos" loading="lazy" />
+          <figcaption>Toma 2 · Tres cuartos</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-b3-perfil.jpg" alt="PAZ B — perfil" loading="lazy" />
+          <figcaption>Toma 3 · Perfil + rayos</figcaption>
+        </figure>
+      </div>
+      <div class="copy-box">
+        <p class="hl">Respira. Ya estás aquí.</p>
+        <p class="sp">La calle sigue. Tú no tienes que correr con ella.</p>
+      </div>
+      <details>
+        <summary>Prompt maestro (EN)</summary>
+        <p class="prompt">Photorealistic ad still, 16:9. Medium shot waist-up, Latina woman early-30s on crowded Diagonal Barcelona sidewalk, 8am summer. Eyes softly closed in peace. Golden morning rays through tree leaves on her body. Blurred rushing pedestrians behind. Fresh warm air. Natural cinematic. No text/logos/overlays. Angle: [FRONTAL | THREE-QUARTER | PROFILE slightly low].</p>
+      </details>
+    </article>
+
+    <article class="set" id="set-c">
+      <div class="set-head">
+        <div>
+          <div class="set-id">CONJUNTO C</div>
+          <h3>Pausa en el commute</h3>
+        </div>
+      </div>
+      <p class="why">Paz como micro-respiración a mitad del trayecto. Lino claro = ligereza; mismo contraste con la prisa.</p>
+      <div class="shots">
+        <figure>
+          <img src="assets/paz-c1-frontal.jpg" alt="PAZ C — toma frontal" loading="lazy" />
+          <figcaption>Toma 1 · Frontal</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-c2-trescuartos.jpg" alt="PAZ C — tres cuartos" loading="lazy" />
+          <figcaption>Toma 2 · Tres cuartos</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/paz-c3-perfil.jpg" alt="PAZ C — perfil" loading="lazy" />
+          <figcaption>Toma 3 · Perfil + rayos</figcaption>
+        </figure>
+      </div>
+      <div class="copy-box">
+        <p class="hl">Entre una cosa y la otra: calma.</p>
+        <p class="sp">No hace falta salir de la ciudad para volver a ti.</p>
+      </div>
+      <details>
+        <summary>Prompt maestro (EN)</summary>
+        <p class="prompt">Photorealistic ad still, 16:9. Medium shot waist-up, Mediterranean man late-30s in light linen shirt, stopped mid-commute on Diagonal Barcelona sidewalk, 8am summer. Eyes closed for one breath of peace. Soft golden rays through plane-tree leaves. Blurred cyclists/pedestrians = stress vs stillness. Natural cinematic. No text/logos/overlays. Angle: [FRONTAL | THREE-QUARTER | PROFILE slightly low].</p>
+      </details>
+    </article>
+
+    <div class="decide">
+      <div class="decide-inner">
+        <p>¿Qué conjunto representa mejor PAZ para el anuncio?</p>
+        <div class="btns">
+          <button type="button" data-pick="A">A</button>
+          <button type="button" data-pick="B">B</button>
+          <button type="button" data-pick="C">C</button>
+        </div>
+        <p class="note" id="pick-note">Tu elección se guarda en este teléfono (local).</p>
+      </div>
+    </div>
+
+    <footer>
+      YOS · Motor PAZ v1 · Piloto · Siguiente: motor LIBERACIÓN (aparte) → luego mix. Mover a Cockpit Gonzalo cuando apruebes.
+    </footer>
+  </div>
+  <script>
+    const note = document.getElementById("pick-note");
+    const key = "yos-motor-paz-pick";
+    const saved = localStorage.getItem(key);
+    document.querySelectorAll(".btns button").forEach((btn) => {
+      if (saved && btn.dataset.pick === saved) {
+        btn.classList.add("picked");
+        note.textContent = "Elegiste conjunto " + saved + ". Dímelo en el chat para tunear el motor.";
+      }
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".btns button").forEach((b) => b.classList.remove("picked"));
+        btn.classList.add("picked");
+        localStorage.setItem(key, btn.dataset.pick);
+        note.textContent = "Elegiste conjunto " + btn.dataset.pick + ". Dímelo en el chat para tunear el motor.";
+      });
+    });
+  </script>
+</body>
+</html>
