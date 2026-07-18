@@ -1,0 +1,44 @@
+{
+  "id": "motor-paz-v1",
+  "emocion": "PAZ",
+  "status": "piloto",
+  "relacionados": ["LIBERACION"],
+  "nota_relacionados": "PAZ y LIBERACIÓN son motores separados. Un mix PAZ×LIBERACIÓN se abre como motor tercero cuando haya baseline de ambos.",
+  "hipotesis": "Un instante de ojos cerrados del avatar en acera concurrida (Diagonal BCN, 8am verano), bañado por rayos entre árboles, evoca paz por contraste con prisas/estrés del entorno.",
+  "metrica_inicial": {
+    "concepcion": "Mayor identificación emocional → más interacciones",
+    "confirmacion": "interacciones + conversiones a cliente en funnel"
+  },
+  "inputs_minimos": ["emocion", "avatar", "contexto_entorno", "contraste", "plataforma"],
+  "matriz": {
+    "conjuntos": 3,
+    "tomas_por_conjunto": ["frontal", "tres_cuartos", "perfil"],
+    "aspecto": "16:9"
+  },
+  "sets": [
+    {
+      "id": "A",
+      "nombre": "Instante cerrado — Hombre",
+      "avatar": "Hombre latino ~35, casual urbano",
+      "angulo_vibe": "Paz como pausa interior en medio del flujo"
+    },
+    {
+      "id": "B",
+      "nombre": "Respiro urbano — Mujer",
+      "avatar": "Mujer latina ~32, casual verano",
+      "angulo_vibe": "Misma paz; lectura femenina del instante"
+    },
+    {
+      "id": "C",
+      "nombre": "Pausa en el commute",
+      "avatar": "Hombre mediterráneo ~38, lino claro",
+      "angulo_vibe": "Paz como micro-respiración a mitad del trayecto"
+    }
+  ],
+  "copy_base": {
+    "headline": "Un segundo. El tuyo.",
+    "support": "En medio del ruido, el cuerpo ya sabe parar.",
+    "cta": "Descubre el instante"
+  },
+  "plataforma_piloto": "Meta Feed / Stories (adaptar crop después)"
+}
