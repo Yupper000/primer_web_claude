@@ -1,0 +1,52 @@
+{
+  "id": "motor-paz-v2",
+  "emocion": "PAZ",
+  "status": "piloto-vertical",
+  "avatar": "soulId Gonzalo",
+  "relacionados": ["LIBERACION"],
+  "nota_relacionados": "PAZ y LIBERACIÓN son motores separados. Un mix PAZ×LIBERACIÓN se abre como motor tercero cuando haya baseline de ambos.",
+  "hipotesis": "Ojos cerrados + rayos entre árboles + avatar solo en acera urbana evoca paz. Sin crowd: el contraste ya no depende de extras fake; la quietud del cuerpo frente al espacio vacío/urbano sostiene la emoción.",
+  "reglas_visuales_v2": [
+    "9:16 Reels/TikTok",
+    "Avatar soulId Gonzalo consistente",
+    "Estilo cercano a refs, no clon",
+    "CERO personas en fondo"
+  ],
+  "metrica_inicial": {
+    "concepcion": "Mayor identificación emocional → más interacciones",
+    "confirmacion": "interacciones + conversiones a cliente en funnel"
+  },
+  "inputs_minimos": ["emocion", "avatar", "contexto_entorno", "contraste", "plataforma"],
+  "matriz": {
+    "conjuntos": 3,
+    "tomas_por_conjunto": ["frontal", "tres_cuartos", "perfil"],
+    "aspecto": "9:16"
+  },
+  "sets": [
+    {
+      "id": "A",
+      "nombre": "Instante cerrado — Lino",
+      "avatar": "Gonzalo · lino off-white + strap cuero",
+      "angulo_vibe": "Paz como pausa interior; acera vacía"
+    },
+    {
+      "id": "B",
+      "nombre": "Sol filtrado — Polo",
+      "avatar": "Gonzalo · polo beige + strap negro",
+      "angulo_vibe": "Misma paz; lectura cotidiana"
+    },
+    {
+      "id": "C",
+      "nombre": "Pausa urbana — Farola",
+      "avatar": "Gonzalo · camisa crema + farola europea",
+      "angulo_vibe": "Entorno distinto, misma emoción"
+    }
+  ],
+  "copy_base": {
+    "headline": "Un segundo. El tuyo.",
+    "support": "En medio del día, el cuerpo ya sabe parar.",
+    "cta": "Descubre el instante"
+  },
+  "plataforma_piloto": "Reels / TikTok 9:16",
+  "handoff": "HANDOFF/Motor-PAZ-v9x16/ABRIR-EN-MAC.html"
+}
