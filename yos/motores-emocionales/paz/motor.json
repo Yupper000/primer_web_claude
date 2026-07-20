@@ -1,10 +1,17 @@
 {
-  "id": "motor-paz-v1",
+  "id": "motor-paz-v2",
   "emocion": "PAZ",
-  "status": "piloto",
+  "status": "piloto-vertical",
+  "avatar": "soulId Gonzalo",
   "relacionados": ["LIBERACION"],
   "nota_relacionados": "PAZ y LIBERACIÓN son motores separados. Un mix PAZ×LIBERACIÓN se abre como motor tercero cuando haya baseline de ambos.",
-  "hipotesis": "Un instante de ojos cerrados del avatar en acera concurrida (Diagonal BCN, 8am verano), bañado por rayos entre árboles, evoca paz por contraste con prisas/estrés del entorno.",
+  "hipotesis": "Ojos cerrados + rayos entre árboles + avatar solo en acera urbana evoca paz. Sin crowd: el contraste ya no depende de extras fake; la quietud del cuerpo frente al espacio vacío/urbano sostiene la emoción.",
+  "reglas_visuales_v2": [
+    "9:16 Reels/TikTok",
+    "Avatar soulId Gonzalo consistente",
+    "Estilo cercano a refs, no clon",
+    "CERO personas en fondo"
+  ],
   "metrica_inicial": {
     "concepcion": "Mayor identificación emocional → más interacciones",
     "confirmacion": "interacciones + conversiones a cliente en funnel"
@@ -13,32 +20,33 @@
   "matriz": {
     "conjuntos": 3,
     "tomas_por_conjunto": ["frontal", "tres_cuartos", "perfil"],
-    "aspecto": "16:9"
+    "aspecto": "9:16"
   },
   "sets": [
     {
       "id": "A",
-      "nombre": "Instante cerrado — Hombre",
-      "avatar": "Hombre latino ~35, casual urbano",
-      "angulo_vibe": "Paz como pausa interior en medio del flujo"
+      "nombre": "Instante cerrado — Lino",
+      "avatar": "Gonzalo · lino off-white + strap cuero",
+      "angulo_vibe": "Paz como pausa interior; acera vacía"
     },
     {
       "id": "B",
-      "nombre": "Respiro urbano — Mujer",
-      "avatar": "Mujer latina ~32, casual verano",
-      "angulo_vibe": "Misma paz; lectura femenina del instante"
+      "nombre": "Sol filtrado — Polo",
+      "avatar": "Gonzalo · polo beige + strap negro",
+      "angulo_vibe": "Misma paz; lectura cotidiana"
     },
     {
       "id": "C",
-      "nombre": "Pausa en el commute",
-      "avatar": "Hombre mediterráneo ~38, lino claro",
-      "angulo_vibe": "Paz como micro-respiración a mitad del trayecto"
+      "nombre": "Pausa urbana — Farola",
+      "avatar": "Gonzalo · camisa crema + farola europea",
+      "angulo_vibe": "Entorno distinto, misma emoción"
     }
   ],
   "copy_base": {
     "headline": "Un segundo. El tuyo.",
-    "support": "En medio del ruido, el cuerpo ya sabe parar.",
+    "support": "En medio del día, el cuerpo ya sabe parar.",
     "cta": "Descubre el instante"
   },
-  "plataforma_piloto": "Meta Feed / Stories (adaptar crop después)"
+  "plataforma_piloto": "Reels / TikTok 9:16",
+  "handoff": "HANDOFF/Motor-PAZ-v9x16/ABRIR-EN-MAC.html"
 }
