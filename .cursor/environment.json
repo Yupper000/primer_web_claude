@@ -1,0 +1,6 @@
+{
+  "name": "yos-cloud-parity",
+  "install": "npm -v || true; python3 -m pip install -q pillow requests || true",
+  "start": "echo 'YOS cloud environment ready'",
+  "terminals": []
+}
