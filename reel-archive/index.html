@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>G · Reel Trace</title>
+    <meta
+      name="description"
+      content="Archivo de reels de Instagram analizados: audio, texto en pantalla y traducción."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <p class="brand">G · Reel Trace</p>
+      <nav class="nav">
+        <a href="#archivo">Archivo</a>
+        <a href="#como">Cómo funciona</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="hero-title">
+          Reels<br />
+          <span class="hero-italic">desmontados</span>
+        </h1>
+        <p class="hero-lede">
+          Audio, caption y lectura clara de cada vídeo que pediste analizar.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#archivo">Ver archivo</a>
+          <p class="hero-meta" id="reel-count">3 reels indexados</p>
+        </div>
+      </section>
+
+      <section class="archive" id="archivo">
+        <div class="section-head">
+          <h2>Archivo</h2>
+          <p>Ordenados del más reciente al primero.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="Filtros">
+          <button class="chip is-active" data-filter="all" type="button">
+            Todos
+          </button>
+          <button class="chip" data-filter="ai" type="button">IA / VPS</button>
+          <button class="chip" data-filter="faith" type="button">Fe</button>
+        </div>
+        <div id="reel-list" class="reel-list"></div>
+      </section>
+
+      <section class="method" id="como">
+        <h2>Cómo se analiza</h2>
+        <ol class="method-steps">
+          <li>
+            <strong>Descarga</strong>
+            <span>Se extrae el audio del reel con yt-dlp.</span>
+          </li>
+          <li>
+            <strong>Transcripción</strong>
+            <span>Whisper convierte la voz en texto.</span>
+          </li>
+          <li>
+            <strong>Cruce</strong>
+            <span>Se alinea con caption, overlays y contexto.</span>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Archivo personal · uso offline de lo ya analizado</p>
+      <p class="footer-brand">G · Reel Trace</p>
+    </footer>
+
+    <dialog id="reel-dialog" class="reel-dialog">
+      <form method="dialog" class="dialog-bar">
+        <button value="close" class="dialog-close" aria-label="Cerrar">
+          Cerrar
+        </button>
+      </form>
+      <article id="dialog-body" class="dialog-body"></article>
+    </dialog>
+
+    <script src="js/reels.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
