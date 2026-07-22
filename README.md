@@ -4,4 +4,4 @@ Primer proyecto de la pagina web de G.
 
 ## Vistas
 
-- [Reel Trace · GHOST + Solomon](docs/ghost-structure/index.html) — análisis Yuppi de 2 reels (Miquel Gironès + drewspeakz).
+- [Reel Trace Hub · 3 reels](docs/ghost-structure/index.html) — GHOST + Solomon/Amen + Países Bajos (fact-check PNVD).
