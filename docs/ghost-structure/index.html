@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Yuppi · GHOST Structure · Reel Trace</title>
-  <meta name="description" content="Análisis del reel de Miquel Gironès: Become a Ghost Using This Structure — capas societarias y lectura Yuppi." />
+  <title>Yuppi · Reel Trace · GHOST + Solomon</title>
+  <meta name="description" content="Análisis Yuppi de dos reels: GHOST Structure (Miquel Gironès) y God Will Make You Rich / Solomon (drewspeakz)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -49,14 +49,13 @@
       padding: 1.1rem 1.1rem 3.5rem;
     }
 
-    /* —— Hero: one composition —— */
     .hero {
       position: relative;
-      min-height: min(92vh, 760px);
+      min-height: min(88vh, 720px);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1.25rem 0 1.6rem;
+      padding: 1.25rem 0 1.4rem;
       overflow: hidden;
     }
 
@@ -110,7 +109,7 @@
       letter-spacing: -0.02em;
       line-height: 1.25;
       margin: 0 0 0.55rem;
-      max-width: 18ch;
+      max-width: 20ch;
       animation: fade-up 0.8s ease-out 0.28s both;
     }
 
@@ -120,7 +119,7 @@
       margin: 0 0 1.15rem;
       color: var(--mute);
       font-size: 0.95rem;
-      max-width: 36ch;
+      max-width: 38ch;
       animation: fade-up 0.8s ease-out 0.4s both;
     }
 
@@ -159,11 +158,46 @@
       color: var(--ink);
     }
 
-    /* —— Sections —— */
-    section {
-      margin: 2.1rem 0;
-      animation: fade-up 0.7s ease-out both;
+    .nav-reels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem;
+      position: sticky;
+      top: 0;
+      z-index: 8;
+      padding: 0.55rem 0;
+      margin: 0.2rem 0 0.4rem;
+      background: color-mix(in srgb, var(--void) 82%, transparent);
+      backdrop-filter: blur(10px);
     }
+
+    .nav-reels a {
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.65rem 0.4rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .nav-reels a:hover {
+      border-color: rgba(253, 167, 38, 0.5);
+      color: var(--orange);
+    }
+
+    .reel-divider {
+      margin: 2.4rem 0 1.2rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple), var(--orange), transparent);
+      border: 0;
+    }
+
+    section { margin: 2.1rem 0; animation: fade-up 0.7s ease-out both; }
 
     .eyebrow {
       font-size: 0.68rem;
@@ -207,12 +241,7 @@
 
     .pill strong { color: var(--ink); font-weight: 700; }
 
-    /* —— Stack layers (interaction = allowed container) —— */
-    .stack {
-      display: grid;
-      gap: 0.55rem;
-      margin-top: 0.4rem;
-    }
+    .stack { display: grid; gap: 0.55rem; margin-top: 0.4rem; }
 
     .layer {
       position: relative;
@@ -234,9 +263,7 @@
     .layer::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
+      left: 0; top: 0; bottom: 0;
       width: 3px;
       background: linear-gradient(180deg, var(--orange), var(--purple));
     }
@@ -249,17 +276,8 @@
       margin: 0 0 0.2rem;
     }
 
-    .layer h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .layer p {
-      margin: 0;
-      color: var(--mute);
-      font-size: 0.86rem;
-    }
+    .layer h3 { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 700; }
+    .layer p { margin: 0; color: var(--mute); font-size: 0.86rem; }
 
     .arrow {
       text-align: center;
@@ -269,12 +287,56 @@
       margin: -0.1rem 0;
     }
 
-    /* —— Split insight —— */
-    .split {
+    .bags {
       display: grid;
-      gap: 0.7rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.4rem;
+      margin-top: 0.75rem;
     }
 
+    .bag {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.7rem 0.35rem;
+      text-align: center;
+      background: var(--surface);
+      min-height: 5.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .bag.lord {
+      border-color: rgba(141, 5, 249, 0.45);
+      background: linear-gradient(180deg, rgba(141,5,249,0.18), var(--surface));
+    }
+
+    .bag.save {
+      border-color: rgba(253, 167, 38, 0.45);
+      background: linear-gradient(180deg, rgba(253,167,38,0.14), var(--surface));
+    }
+
+    .bag.self {
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .bag .pct {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .bag .lbl {
+      font-size: 0.58rem;
+      font-weight: 600;
+      color: var(--mute);
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .split { display: grid; gap: 0.7rem; }
     @media (min-width: 640px) {
       .split { grid-template-columns: 1fr 1fr; }
     }
@@ -295,21 +357,11 @@
       color: var(--orange);
     }
 
-    .block p, .block li {
-      margin: 0;
-      color: var(--mute);
-      font-size: 0.88rem;
-    }
-
-    .block ul {
-      margin: 0;
-      padding-left: 1.05rem;
-    }
-
+    .block p, .block li { margin: 0; color: var(--mute); font-size: 0.88rem; }
+    .block ul { margin: 0; padding-left: 1.05rem; }
     .block li { margin: 0.35rem 0; }
     .block li::marker { color: var(--purple); }
 
-    /* —— Quote —— */
     .quote {
       margin: 1rem 0 0;
       padding: 1rem 1.05rem;
@@ -335,7 +387,6 @@
       text-transform: uppercase;
     }
 
-    /* —— Visual strip —— */
     .visual {
       margin-top: 0.85rem;
       border-radius: var(--radius);
@@ -364,16 +415,8 @@
         var(--surface);
     }
 
-    .verdict h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
-    }
-
-    .verdict p {
-      margin: 0;
-      color: var(--mute);
-      font-size: 0.9rem;
-    }
+    .verdict h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .verdict p { margin: 0; color: var(--mute); font-size: 0.9rem; }
 
     footer {
       margin-top: 2.5rem;
@@ -412,143 +455,252 @@
         <img src="assets/reel-thumb.jpg" alt="" />
       </div>
       <p class="brand">Yuppi</p>
-      <h1>GHOST Structure: por qué “los ricos no poseen nada”</h1>
+      <h1>Reel Trace: GHOST + Solomon</h1>
       <p class="lede">
-        Vista web del reel de Miquel Gironès — capas societarias para volverte difícil de rastrear.
+        Dos reels, un documento. Capas societarias vs. regla 80/20 de riqueza bíblica.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#capas">Ver las capas</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/reel/Da-soi3tKZD/" target="_blank" rel="noopener">Abrir reel en IG</a>
+        <a class="btn btn-primary" href="#reel-ghost">01 · GHOST</a>
+        <a class="btn btn-ghost" href="#reel-amen">02 · Amen / Solomon</a>
       </div>
     </header>
 
-    <section id="fuente" style="animation-delay: 0.05s">
-      <p class="eyebrow">Fuente</p>
+    <nav class="nav-reels" aria-label="Reels en este documento">
+      <a href="#reel-ghost">01 · GHOST Structure</a>
+      <a href="#reel-amen">02 · God Will Make You Rich</a>
+    </nav>
+
+    <!-- ================= REEL 01 ================= -->
+    <section id="reel-ghost">
+      <p class="eyebrow">Reel 01</p>
       <h2>Become a Ghost Using This Structure</h2>
       <p class="section-lead">
-        Reel de ~74s. Hook en X/IG: <em>“Why The Rich NEVER Own Anything, The GHOST Structure…”</em>
+        ~74s. Hook: <em>“Why The Rich NEVER Own Anything, The GHOST Structure…”</em>
       </p>
       <div class="meta-row">
         <span class="pill"><strong>@miquel_girones</strong></span>
         <span class="pill">11.3K likes · 2.9K comments</span>
-        <span class="pill">CTA: comentar <strong>GHOST</strong></span>
-        <span class="pill">Marca: First Class Citizen</span>
+        <span class="pill">CTA: <strong>GHOST</strong></span>
+        <span class="pill"><a href="https://www.instagram.com/reel/Da-soi3tKZD/" target="_blank" rel="noopener">Abrir en IG</a></span>
       </div>
     </section>
 
-    <section id="tesis" style="animation-delay: 0.1s">
-      <p class="eyebrow">Tesis del vídeo</p>
+    <section id="tesis">
+      <p class="eyebrow">Tesis</p>
       <h2>No poseas el activo. Sé dueño de la capa de arriba.</h2>
       <p class="section-lead">
-        El clip abre con un fragmento tipo “estructura opaca”: una compañía operativa no la tienes a tu nombre;
-        la posee otra entidad, y esa otra, y así hasta que rastrear al beneficiario final atraviesa varios países.
+        Cadena opaca: la compañía operativa no está a tu nombre; la posee otra entidad, y esa otra…
+        hasta que rastrear al beneficiario final atraviesa varios países.
       </p>
       <div class="quote">
         <p>
           “They can break the laws of their own country relatively easily, but they can’t break the laws of foreign nations.”
         </p>
-        <span>Clip de apertura · reel</span>
+        <span>Clip de apertura · reel 01</span>
       </div>
     </section>
 
-    <section id="capas" style="animation-delay: 0.15s">
+    <section id="capas">
       <p class="eyebrow">Estructura GHOST</p>
-      <h2>Cuatro capas (como las cuenta el reel)</h2>
-      <p class="section-lead">
-        Cadena de ownership que explica el vídeo. De abajo (activo) hacia arriba (menos visible).
-      </p>
+      <h2>Cuatro capas</h2>
+      <p class="section-lead">De arriba (menos visible) hacia abajo (activo).</p>
 
       <div class="stack" role="list">
         <article class="layer" role="listitem">
           <p class="n">CAPA 04 · Cima</p>
           <h3>Entidad en Vanuatu</h3>
-          <p>Dueña del trust / holding. Isla del Pacífico; en el clip: “off the coast of Australia”.</p>
+          <p>Dueña del trust. En el clip: “off the coast of Australia”.</p>
         </article>
         <div class="arrow" aria-hidden="true">↓ owns</div>
         <article class="layer" role="listitem">
           <p class="n">CAPA 03</p>
           <h3>Trust · Cook Islands</h3>
-          <p>Posee la compañía de Singapur. En suaves: deposit + abogado local (~$100k+) para demandar.</p>
+          <p>Posee Singapore co. Demandar ≈ abogado local + depósito &gt;$100k.</p>
         </article>
         <div class="arrow" aria-hidden="true">↓ owns</div>
         <article class="layer" role="listitem">
           <p class="n">CAPA 02</p>
           <h3>Company · Singapore</h3>
-          <p>Dueña de la compañía operativa. Overlay del reel: SINGAPORE COMPANY.</p>
+          <p>Dueña de la compañía operativa.</p>
         </article>
         <div class="arrow" aria-hidden="true">↓ owns</div>
         <article class="layer" role="listitem">
           <p class="n">CAPA 01 · Activo</p>
-          <h3>Company · Canada (ejemplo)</h3>
+          <h3>Company · Canada</h3>
           <p>La empresa “visible”. Tú no apareces como owner directo.</p>
         </article>
       </div>
 
-      <div class="visual" style="margin-top: 1.1rem; max-height: 360px; aspect-ratio: 9/12;">
-        <img src="assets/layers.jpg" alt="Overlay del reel: Singapore Company y Cook Islands Holding LLC" />
+      <div class="visual" style="max-height: 360px; aspect-ratio: 9/12;">
+        <img src="assets/layers.jpg" alt="Overlay: Singapore Company y Cook Islands Holding LLC" />
       </div>
     </section>
 
-    <section id="lectura" style="animation-delay: 0.2s">
-      <p class="eyebrow">Qué hace el contenido</p>
-      <h2>Clip + explicación + lead magnet</h2>
+    <section id="lectura-ghost">
+      <p class="eyebrow">Mecanismo</p>
+      <h2>Clip + mapa + keyword</h2>
       <div class="split">
         <div class="block">
-          <h3>Mecanismo</h3>
+          <h3>Cómo convierte</h3>
           <ul>
-            <li>Abrir con autoridad prestada (clip lifestyle / “rich never own”).</li>
-            <li>Traducir a capas concretas (SG, Cook Islands, Vanuatu…).</li>
-            <li>Contraste emocional: Canadá directo = “I’m screwed”.</li>
-            <li>Cerrar con producto propio: “ghost structure” + comment keyword.</li>
+            <li>Autoridad prestada (lifestyle / “rich never own”).</li>
+            <li>Capas concretas (SG, Cook Islands, Vanuatu).</li>
+            <li>Contraste: Canadá directo = “I’m screwed”.</li>
+            <li>CTA: comentar GHOST → DM del “full video”.</li>
           </ul>
         </div>
         <div class="block">
-          <h3>Oferta implícita</h3>
+          <h3>Oferta</h3>
           <ul>
-            <li>Nicho: residencias, LLCs, trusts, “0% tax” setups.</li>
-            <li>CTA: comentar <strong style="color:#fff">GHOST</strong> → DM con el “full video”.</li>
-            <li>Branding: The First Class Citizen / Playmaker.</li>
-            <li>~2.9K comments = motor de leads en comentarios.</li>
+            <li>Nicho: residencias, LLCs, trusts, “0% tax”.</li>
+            <li>Marca: First Class Citizen.</li>
+            <li>~2.9K comments = motor de leads.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="transcripcion" style="animation-delay: 0.25s">
+    <hr class="reel-divider" />
+
+    <!-- ================= REEL 02 ================= -->
+    <section id="reel-amen">
+      <p class="eyebrow">Reel 02</p>
+      <h2>God Will Make You Rich — Solomon’s money rule</h2>
+      <p class="section-lead">
+        ~172s. Caption: <em>“Comment Amen If You Agree!”</em> · Hook overlay: <em>GOD WILL MAKE YOU RICH</em>
+      </p>
+      <div class="meta-row">
+        <span class="pill"><strong>@drewspeakz</strong></span>
+        <span class="pill">156K likes · 3.3K comments</span>
+        <span class="pill">CTA: <strong>Amen</strong></span>
+        <span class="pill"><a href="https://www.instagram.com/reel/DaoIBYLzqn_/" target="_blank" rel="noopener">Abrir en IG</a></span>
+      </div>
+      <div class="visual" style="max-height: 380px;">
+        <img src="assets/amen-thumb.jpg" alt="Thumbnail: GOD WILL MAKE YOU RICH" style="object-position: center 20%;" />
+      </div>
+    </section>
+
+    <section id="tesis-amen">
+      <p class="eyebrow">Tesis</p>
+      <h2>Invierte el 80/20: da primero, quédate el quinto</h2>
+      <p class="section-lead">
+        Usa a Salomón (~$2T “en dinero de hoy”) y Proverbios como guía de gestión:
+        honrar a Dios con la mayoría del wealth → graneros que se desbordan.
+      </p>
+      <div class="quote">
+        <p>
+          “Honor the Lord with your wealth, with the first fruits of all your crops.
+          Then your barns will be filled to overflowing…”
+        </p>
+        <span>Proverbs 3:9–10 · citado en el reel</span>
+      </div>
+    </section>
+
+    <section id="regla-cinco">
+      <p class="eyebrow">Modelo visual</p>
+      <h2>Cinco bolsas de dinero</h2>
+      <p class="section-lead">
+        El reel reparte 5 “bags”: 3 al Señor / servir / planes del corazón, 1 a ahorro (José: un quinto), 1 para ti.
+      </p>
+
+      <div class="bags" aria-label="Reparto 80/20 invertido">
+        <div class="bag lord"><span class="pct">1</span><span class="lbl">Lord / dar</span></div>
+        <div class="bag lord"><span class="pct">2</span><span class="lbl">Servir</span></div>
+        <div class="bag lord"><span class="pct">3</span><span class="lbl">Planes</span></div>
+        <div class="bag save"><span class="pct">4</span><span class="lbl">Ahorro ⅕</span></div>
+        <div class="bag self"><span class="pct">5</span><span class="lbl">Tú</span></div>
+      </div>
+
+      <div class="split" style="margin-top: 1rem;">
+        <div class="block">
+          <h3>Qué cuenta como “dar”</h3>
+          <ul>
+            <li>No solo el mega-church: charity, comida/ropa en la calle, gente cercana.</li>
+            <li>Invertir en lo que “Dios puso en tu corazón”: negocio, ministry, youth group, restaurant…</li>
+            <li>En vez de “worthless pleasures that fly by”.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3>Ahorro (José)</h3>
+          <ul>
+            <li>Proverbs 10:5 + historia de José: 7 años abundancia / 7 hambruna.</li>
+            <li>Guardar un quinto en la abundancia.</li>
+            <li>Proverbs 11:24: quien da libremente, gana más.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="visual" style="max-height: 360px; aspect-ratio: 9/12;">
+        <img src="assets/amen-bags.jpg" alt="Frame del reel con stacks de cash y Biblia" />
+      </div>
+    </section>
+
+    <section id="lectura-amen">
+      <p class="eyebrow">Mecanismo</p>
+      <h2>Fe + dinero + Amen</h2>
+      <div class="split">
+        <div class="block">
+          <h3>Cómo convierte</h3>
+          <ul>
+            <li>Hook de prosperidad (cash + Biblia + purple hoodie).</li>
+            <li>Autoridad bíblica (Salomón / Proverbios / José).</li>
+            <li>Regla simple memorizable: 3+1+1 bolsas.</li>
+            <li>Cierre: “huge act of faith” + comment Amen.</li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3>Señales</h3>
+          <ul>
+            <li>156K likes — reach alto en nicho christian / foryou.</li>
+            <li>CTA blando de acuerdo (“Amen”) vs. keyword de lead (GHOST).</li>
+            <li>Se desmarca de “prosperity gospel” pero vende mindset de abundancia.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="transcripcion-amen">
       <p class="eyebrow">Transcripción (condensada)</p>
-      <h2>Lo que se dice, en orden</h2>
+      <h2>Orden del argumento</h2>
       <div class="block">
         <ol style="margin:0; padding-left:1.15rem; color:var(--mute); font-size:0.88rem;">
-          <li style="margin:0.4rem 0;">Canada co. no la posees tú → la posee Singapore co.</li>
-          <li style="margin:0.4rem 0;">Singapore co. la posee un trust en Cook Islands.</li>
-          <li style="margin:0.4rem 0;">Ese trust lo posee una entidad en Vanuatu.</li>
-          <li style="margin:0.4rem 0;">Policía local no “rompe” leyes extranjeras → 5–6 gobiernos.</li>
-          <li style="margin:0.4rem 0;">Miquel: capas = company / foundation / holding / trust.</li>
-          <li style="margin:0.4rem 0;">Cook Islands: abogado local + depósito &gt;$100k para demandar.</li>
-          <li style="margin:0.4rem 0;">CTA: comenta GHOST para el vídeo completo de la estructura.</li>
+          <li style="margin:0.4rem 0;">Salomón = el más rico; guía en Proverbs.</li>
+          <li style="margin:0.4rem 0;">Honor the Lord with first fruits (Prov 3:9–10) → barns overflowing.</li>
+          <li style="margin:0.4rem 0;">First fruits = lo mejor → mayoría del income al Señor / servir / planes.</li>
+          <li style="margin:0.4rem 0;">3 de 5 bolsas “out”; no solo donar a mega-church.</li>
+          <li style="margin:0.4rem 0;">Ahorra antes de necesitarlo (Prov 10:5) → José guarda ⅕.</li>
+          <li style="margin:0.4rem 0;">1 bolsa para ti (comida, ropa, placeres).</li>
+          <li style="margin:0.4rem 0;">Invertir el 80/20 clásico: antes 80% placer / 20% save → ahora al revés.</li>
+          <li style="margin:0.4rem 0;">CTA: Amen + follow + share.</li>
         </ol>
       </div>
     </section>
 
-    <section id="veredicto" style="animation-delay: 0.3s">
-      <p class="eyebrow">Lectura Yuppi</p>
-      <h2>Para qué sirve este patrón</h2>
+    <hr class="reel-divider" />
+
+    <section id="veredicto">
+      <p class="eyebrow">Lectura Yuppi · ambos</p>
+      <h2>Dos embudos, misma anatomía</h2>
       <div class="verdict">
-        <h3>Embudo en un reel: autoridad → mapa → keyword</h3>
+        <h3>Autoridad → mapa simple → una acción</h3>
         <p>
-          No vende la capa legal en el vídeo: vende <em>claridad percibida</em> + acceso.
-          El diagrama de 4 países es el “producto visual”; el comentario GHOST es el formulario.
-          Misma lógica que un lead magnet Yuppi: gancho fuerte, estructura simple, una sola acción.
+          <strong style="color:#fff">GHOST</strong> vende opacidad societaria con diagrama de países y keyword de DM.
+          <strong style="color:#fff">Amen / Solomon</strong> vende disciplina de fe-dinero con 5 bolsas y comentario de acuerdo.
+          En ambos: gancho emocional fuerte, estructura que cabe en una captura, CTA de una palabra.
         </p>
       </div>
       <p class="section-lead" style="margin-top:1rem;">
-        Aviso: esto es un análisis de formato/contenido, no asesoría fiscal ni legal.
+        Aviso: análisis de formato/contenido. No es asesoría fiscal, legal ni teológica.
       </p>
     </section>
 
     <footer>
-      <span>Yuppi · Reel Trace · GHOST Structure</span>
-      <a href="https://www.instagram.com/reel/Da-soi3tKZD/" target="_blank" rel="noopener">Instagram source</a>
+      <span>Yuppi · Reel Trace · 2 reels</span>
+      <span>
+        <a href="https://www.instagram.com/reel/Da-soi3tKZD/" target="_blank" rel="noopener">GHOST</a>
+        ·
+        <a href="https://www.instagram.com/reel/DaoIBYLzqn_/" target="_blank" rel="noopener">Amen</a>
+      </span>
     </footer>
   </div>
 </body>
